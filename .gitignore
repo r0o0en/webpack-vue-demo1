@@ -3,3 +3,4 @@ css/**/*.css
 .idea
 /node_modules/
 .project
+/dist/

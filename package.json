@@ -1,0 +1,16 @@
+{
+  "name": "webpack-vue-demo1",
+  "version": "1.0.0",
+  "description": "webpack-vue-router-demo",
+  "main": "index.js",
+  "scripts": {
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+
+  },
+  "dependencies": {
+	  
+  }
+}
