@@ -1,9 +1,15 @@
+//css 单独抽取插件
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+// 实例化 extract-text-webpack-plugin
+let cssIndependent = new ExtractTextWebpackPlugin({
+    filename:'./dist/css/[name].css'
+});
 module.exports = {
     entry: {
         index: './src/index.js'
     }
     , output: {
-        filename: './dist/[name].js'
+        filename: './dist/js/[name].js'
     }
     , module: {
         rules: [
@@ -17,21 +23,28 @@ module.exports = {
                     }
                 }
             }
-            , {
-                test: /\.css$/,
-                loader: [
-                    'style-loader',
-                    'css-loader'
-                ]
+            ,{
+                test:/\.css$/,
+                use:ExtractTextWebpackPlugin.extract({
+                    fallback:'style-loader',
+                    use:[
+                        'css-loader'
+                    ]
+                })
             }
             ,{
                 test:/\.less$/,
-                loader:[
-                    'style-loader',
-                    'css-loader',
-                    'less-loader'
-                ]
+                use:ExtractTextWebpackPlugin.extract({
+                    fallback:'style-loader',
+                    use:[
+                        'css-loader',
+                        'less-loader'
+                    ]
+                })
             }
         ]
     }
+    ,plugins:[
+        cssIndependent
+    ]
 }
