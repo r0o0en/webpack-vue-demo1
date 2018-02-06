@@ -1,15 +1,26 @@
-//css 单独抽取插件
+/*
+* Path 模块
+* */
+const Path = require('path');
+//编译文件存放目录
+let dist = Path.join(__dirname,'dist');
+/*
+* extract-text-webpack-plugin 模块
+* 抽取css打包
+* */
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 // 实例化 extract-text-webpack-plugin
 let cssIndependent = new ExtractTextWebpackPlugin({
-    filename:'./dist/css/[name].css'
+    filename:'css/[name].css'
 });
+
 module.exports = {
     entry: {
         index: './src/index.js'
     }
     , output: {
-        filename: './dist/js/[name].js'
+        path:dist,
+        filename: 'js/[name].js'
     }
     , module: {
         rules: [
