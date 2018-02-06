@@ -2,11 +2,19 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
-		<link rel="stylesheet" href="../dist/css/index.css">
+		<title><%= htmlWebpackPlugin.options.title %></title>
 	</head>
 	<body>
+		<%
+			var data = htmlWebpackPlugin.options.testData;
+		%>
+		<p><%= typeof data %></p>
+		<%
+			for(var i =0 ; i < data.length ; i++){
+		%>
+		<p><%= i%>——<%= data[i]%></p>
+		<%	}   %>
+
         <div class="box"></div>
-		<script src="../dist/js/index.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>
