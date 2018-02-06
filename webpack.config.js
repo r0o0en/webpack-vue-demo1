@@ -36,6 +36,7 @@ let htmlIndex = new HtmlWebpackPlugin({
     ,testData:[1,2,3,'haha'] //测试是否能传递自定义数据给.html模板 （证明是可以的）
     ,showErrors:true
 });
+
 module.exports = {
     entry: {
         index: './src/index.js'
@@ -83,4 +84,7 @@ module.exports = {
         cssIndependent //css抽取打包
         ,htmlIndex //处理生成新的.html
     ]
+    ,devServer: {//热更新
+        contentBase: './src'
+    }
 }
