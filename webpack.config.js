@@ -26,12 +26,12 @@ let cssIndependent = new ExtractTextWebpackPlugin({
 *  html-webpack-plugin 模块
 *  输出新的 .html 文件
 *  1、自动添加 link/script 引入打包的资源文件
-*  2、处理html模板 ( 需要 ejs-compiled-loader 模块 )
+*  2、处理html模板 ( 需要 ejs-compiled-loader模块 或者ejs-html-loader/ejs-render-loder/ejs-loader )
 * */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 //实例处理 src/index.html
 let htmlIndex = new HtmlWebpackPlugin({
-    template: Path.join(path_src,'index.html') //待处理的.html模板路径
+    template:'ejs-compiled-loader!'+Path.join(path_src,'index.html') //待处理的.html模板路径
     ,title:'html-webpack-plugin 新生成的html文件' //传递给.html的参数title，通过 <%= htmlWebpackPlugin.options.title %> 调用
     ,testData:[1,2,3,'haha'] //测试是否能传递自定义数据给.html模板 （证明是可以的）
     ,showErrors:true

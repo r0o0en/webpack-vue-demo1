@@ -5,6 +5,8 @@
 		<title><%= htmlWebpackPlugin.options.title %></title>
 	</head>
 	<body>
+		<% var parentData = htmlWebpackPlugin.options; %>
+		<% include /src/components/bottom-menu.html %>
 		<%
 			var data = htmlWebpackPlugin.options.testData;
 		%>
