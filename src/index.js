@@ -13,3 +13,4 @@ age();
 
 //css
 import './public-resource/css/test.css';
+import './public-resource/css/test2.less';
