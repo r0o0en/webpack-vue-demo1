@@ -4,6 +4,7 @@
 const Path = require('path');
 //编译文件存放目录
 let dist = Path.join(__dirname,'dist');
+
 /*
 * extract-text-webpack-plugin 模块
 * 抽取css打包
@@ -13,6 +14,12 @@ const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 let cssIndependent = new ExtractTextWebpackPlugin({
     filename:'css/[name].css'
 });
+
+/*
+* postcss-loader 模块  + autoprefixer 模块
+* css 前缀自动补全
+* 额外配置文件 postcss.config.js
+* */
 
 module.exports = {
     entry: {
@@ -39,7 +46,8 @@ module.exports = {
                 use:ExtractTextWebpackPlugin.extract({
                     fallback:'style-loader',
                     use:[
-                        'css-loader'
+                        'css-loader',
+                        'postcss-loader'
                     ]
                 })
             }
@@ -49,6 +57,7 @@ module.exports = {
                     fallback:'style-loader',
                     use:[
                         'css-loader',
+                        'postcss-loader',
                         'less-loader'
                     ]
                 })
