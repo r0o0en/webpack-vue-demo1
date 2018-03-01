@@ -5,11 +5,12 @@
 		<title><%= htmlWebpackPlugin.options.title %></title>
 	</head>
 	<body>
-		<% var parentData = htmlWebpackPlugin.options; %>
-		<% include /src/components/bottom-menu.html %>
 		<%
-			var data = htmlWebpackPlugin.options.testData;
+			//parentData用来给子页面传参
+			var parentData = htmlWebpackPlugin.options;
 		%>
+		<% include /src/components/bottom-menu.html %>
+		<% var data = htmlWebpackPlugin.options.testData; %>
 		<p><%= typeof data %></p>
 		<%
 			for(var i =0 ; i < data.length ; i++){

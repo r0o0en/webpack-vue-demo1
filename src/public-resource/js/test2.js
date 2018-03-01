@@ -3,4 +3,4 @@ module.exports = {
 	say:function(name){
 		console.log('i say ' + (name || this.name));
 	}
-}
+};

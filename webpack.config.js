@@ -33,7 +33,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 let htmlIndex = new HtmlWebpackPlugin({
     template:'ejs-compiled-loader!'+Path.join(path_src,'index.html') //待处理的.html模板路径
     ,title:'html-webpack-plugin 新生成的html文件' //传递给.html的参数title，通过 <%= htmlWebpackPlugin.options.title %> 调用
-    ,testData:[1,2,3,'haha'] //测试是否能传递自定义数据给.html模板 （证明是可以的）
+    ,testData:['html-webapck-plugin模块','可以处理html模板','最基础就是用来编译时自动引入.css/.js文件','也能做一些传参处理模板的功能'] //测试是否能传递自定义数据给.html模板 （证明是可以的）
     ,showErrors:true
 });
 
