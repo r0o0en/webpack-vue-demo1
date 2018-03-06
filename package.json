@@ -15,8 +15,6 @@
     "babel-preset-env": "^1.6.1",
     "css-loader": "^0.28.9",
     "ejs-compiled-loader": "^1.1.0",
-    "ejs-html-loader": "^3.1.0",
-    "ejs-render-loader": "^1.0.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^2.30.1",
     "less": "^2.7.3",
