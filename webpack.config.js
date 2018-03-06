@@ -87,4 +87,13 @@ module.exports = {
     ,devServer: {//热更新
         contentBase: './src'
     }
-}
+    ,resolve: {//vue template 报错 npm默认导出的是运行时构建版本，不含 template 编辑器（template包含在独立构建/完整版本中）
+        /*
+        * https://segmentfault.com/q/1010000007071229?_ea=1231525 (2楼)
+        * https://vuefe.cn/v2/guide/installation.html （搜索：如果你仍然希望使用完整版本，则需要在捆绑程序中配置别名：）
+        * */
+        alias: {
+            'vue': 'vue/dist/vue.js'
+        }
+    }
+};
