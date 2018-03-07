@@ -6,7 +6,10 @@ Vue.use(VueRouter);
 /*
 * 1. 定义（路由）组件。
 * 可以从其他文件import进来，如.html、.vue...
+* import Test from "Test.vue";
+* 引入的组件直接使用，不要傻不拉几的在包裹一层对象。。。。。
 * */
+
 const Home = {
     template:'<div>home视图内容</div>'
 };
